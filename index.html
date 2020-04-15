@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Snippet Library</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/themes/prism.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/prism.min.js"></script>
+    <style>
+      h1, h2, h3, p, li, label{
+        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+      }
+      .wrap {
+       /* display: grid;
+       grid-template-columns: repeat(2,1fr);
+       grid-gap: 2vw; */
+       display: flex;
+       flex-flow: row wrap;
+       justify-content: space-around;
+      }
+      .wrap2{
+         display: flex;
+       flex-flow: column wrap;
+       justify-content: space-around;
+      }
+      .left, .right{
+        flex-grow: 1;
+        flex-basis: 200px;
+        margin-right: 2vw;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Form Snippet Library</h1>
+    <!-- if you need to show copy-pastable code, you can use the following-->
+    <!--<pre><code class="language-html"><input type=""></code></pre>-->
+    <h2>Form tag</h2>
+    <p>Every form starts with a <code class="language-html">form</code> tag</p>
+    <pre><code class="language-html"><form action="" method=""></form></code></pre>
+    <p>
+      <code class="language-html">action</code> attribute is used to link a
+      file/ an URL, to which the form's information should be submitted.
+    </p>
+    <p>
+      <code class="language-html">method</code> attribute has two values, either
+      <code class="language-html">post</code> or
+      <code class="language-html">get</code>.
+    </p>
+    <p>
+      But the <code class="language-html">post</code> method is often used, as
+      the information will be "posted" into the database.
+    </p>
+    <br />
+    <hr />
+    <h2>Grouping any inputs together</h2>
+    <p>in a form that logically belong together.</p>
+    <p>
+      Use <pre><code class="language-html"><fieldset></fieldset></code></pre>
+    </p>
+     <p><code class="language-html">fieldset</code> is also used often to group radio buttons</p>
+    <p><code class="language-html">fieldset</code> has to have a <code class="language-html">legend</code> tag</p>
+    <pre><code class="language-html"><fieldset>
+      <legend>Mailing Address</legend>
+    </fieldset></code></pre>
+    <div class="wrap">
+      <div class="left">
+    <p>For example</p>
+    <pre> <code class="language-html"><fieldset>
+      <legend>Mailing Address</legend>
+      <div>
+        <label for="street-address">Street Address</label>
+        <input id="street-address" />
+      </div>
+      <div>
+        <label for="city">City</label>
+        <input id="city" />
+      </div>
+      <div>
+        <label for="country">Country</label>
+        <input id="country" />
+      </div>
+      <div>
+        <label for="postal-code">Postal Code</label>
+        <input id="postal-code" />
+      </div>
+    </fieldset></code></pre>
+      </div>
+   <div class="right">
+   <p>It will look like this</p>
+  <fieldset>
+      <legend>Mailing Address</legend>
+      <div>
+        <label for="street-address">Street Address</label>
+        <input id="street-address" />
+      </div>
+      <div>
+        <label for="city">City</label>
+        <input id="city" />
+      </div>
+      <div>
+        <label for="country">Country</label>
+        <input id="country" />
+      </div>
+      <div>
+        <label for="postal-code">Postal Code</label>
+        <input id="postal-code" />
+      </div>
+    </fieldset>
+    <br>
+    <p>Another example, grouping radio buttons</p>
+    <fieldset>
+      <legend>Radio buttons</legend>
+      <input type="radio" id="green" name="fav-color">
+      <label for="green">Green</label>
+
+      <input type="radio" id="light-green" name="fav-color">
+      <label for="light-green">Light Green</label>
+
+      <input type="radio" id="dark-green" name="fav-color">
+      <label for="dark-green">Dark Green</label>
+    </fieldset>
+   </div>
+ </div>
+    <br />
+    <br />
+    <hr />
+    <h2>Inputs and labels</h2>
+    <p>All input elements must have a label element associated with them, primarily for accessibility reasons but also as a way to denote what content should be entered into the field.</p>
+    <p>Each <code class="language-html">input</code> needs an <code class="language-html">id</code> attribute, so that the <code class="language-html">label</code> points to the <code class="language-html">id</code> using its <code class="language-html">for</code> attribute</p>
+    <p>For example</p>
+    <pre><code class="language-html"><form action="thanks.html" method="post">
+     <!-- Labels are associated with inputs using the for and id attributes -->
+      <label for="name">Name</label>
+      <input type="text" id="name">
+      </form></code></pre>
+      <h3>Input's type attributes</h3>
+      <p>There are many <code class="language-html">type</code>  of <code class="language-html">input</code></p>
+      <ul>
+        <li><code class="language-html">number</code></li>
+        <li><code class="language-html">email</code></li>
+        <li><code class="language-html">url</code></li>
+        <li><code class="language-html">password</code>: marks the inputted text as bullets</li>
+        <li><code class="language-html">tel</code></li>
+        <li><code class="language-html">time</code>: accepting time - hrs, mins, secs</li>
+        <li><code class="language-html">date</code>: a calender picker</li>
+        <li><code class="language-html">range</code>: selecting from a range of numbers</li>
+        <li><code class="language-html">color</code></li>
+        <li><code class="language-html">file</code></li>
+        <li><code class="language-html">checkbox</code>: allow a selection of multiple items out of a few possibilities</li>
+        <li><code class="language-html">radio</code>: allow users to select a single option out of many, similar to a select box</li>
+        <li><code class="language-html">search</code></li>
+        <li><code class="language-html">min</code>: specifying a minimum value, for ranges and numbers</li>
+        <li><code class="language-html">max</code>: specifying a maximum value, for ranges and numbers</li>
+        <li><code class="language-html">step</code>:  specifying a jump value for each increment, for ranges and numbers</li>
+      </ul>
+      <p>Example of <code class="language-html">min</code>, <code class="language-html">max</code> and <code class="language-html">step</code>:</p> 
+        <p>Allowing any number between 0 and 1, in increments of 0.1. Fx 0, 0.1, 0.2, 0.3, ... 0.9, 1.0</p>
+      <pre><code class="language-html"><input type="number" min="0" max="1" step="0.1"></code></pre>
+      <div class="wrap">
+        <div class="left"> <p><code class="language-html">placeholder</code> can be used to put example text into an <code class="language-html">input</code> field</p>
+      <pre><code class="language-html"><input placeholder="write your info here"></code></pre></div>
+        <div class="right">
+          <p>It will display as</p><input type="text" placeholder="write your info here">
+        </div>
+      </div>
+    <h3>Checkboxes</h3>
+    <div class="wrap">
+      <div class="left">
+      <pre><code class="language-html"><input type="checkbox"><label for="Brownie">Brownie</label></code></pre>
+      <p>Looking like this</p>
+      <input type="checkbox"><label for="Brownie">Brownie</label>
+    </div>
+      <div class="right">
+      <br/>
+      <p>If you want a box to be check by default, write <code class="language-html">checked</code> attribute in <code  class="language-html">input</code> </p> 
+      <input type="checkbox" checked><label for="Brownie">Brownie</label>
+      <p>Also applied for radio buttons</p>
+      </div>
+    </div>
+    <h3>Radio buttons</h3>
+    <div class="wrap"><div class="left">
+      <pre><code class="language-html"><fieldset>
+  <legend>What’s your favourite colour?</legend>
+
+  <input type="radio" id="green" name="fav-color">
+  <label for="green">Green</label>
+
+  <input type="radio" id="light-green" name="fav-color">
+  <label for="light-green">Light Green</label>
+
+  <input type="radio" id="dark-green" name="fav-color">
+  <label for="dark-green">Dark Green</label>
+</fieldset></code></pre>
+    </div>
+    <div class="right">
+      <p>Look like this</p>
+      <fieldset>
+  <legend>What’s your favourite colour?</legend>
+
+  <input type="radio" id="green" name="fav-color">
+  <label for="green">Green</label>
+
+  <input type="radio" id="light-green" name="fav-color">
+  <label for="light-green">Light Green</label>
+
+  <input type="radio" id="dark-green" name="fav-color">
+  <label for="dark-green">Dark Green</label>
+</fieldset>
+    </div></div>
+    <br />
+    <br />
+    <hr />
+    <h2>Textarea tag</h2>
+    <p>A tag for long texts, such as a message</p>
+    <div class="wrap">
+      <div class="left">
+  <pre><code class="language-html"><label for="message">Your message</label>
+    <textarea name="message" id="message" cols="20" rows="7"></textarea>
+    </code></pre>
+      </div>
+      <div class="right">
+     <p>Showing as</p>
+     <div class="wrap2"><label for="message">Your message:</label>
+    <textarea name="message" id="message" cols="20" rows="7"></textarea></div>
+      </div>
+    </div>
+    <p><code class="language-html">textarea</code>'s resize icon can be removed with CSS <code class="language-css">resize: none</code></p>
+    <br />
+    <br />
+    <hr />
+    <h2>Select boxes</h2>
+    <p>AKA dropdown list/box of <code class="language-html">option</code> tags, which user can choose one of many</p>
+    <div class="wrap">
+      <div class="left"><pre><code class="language-html"><label for="desserts">Choose a dessert</label>
+      <select name="desserts" id="desserts">
+      <option>Brownie</option>
+      <option>Creme-brulee</option>
+      <option>Ice-cream</option>
+      </select></code></pre></div>
+      <div class="right">
+      <p>It should look like this</p>
+      <label for="desserts">Choose a dessert:</label>
+      <select name="desserts" id="desserts">
+      <option>Brownie</option>
+      <option>Creme-brulee</option>
+      <option>Ice-cream</option>
+      </select>
+      </div>
+    </div>
+      <p><code class="language-html">option</code> can be grouped by using  <code class="language-html">optgroup</code></p>
+  <div class="wrap">
+    <div class="left"><pre><code class="language-html"><label for="cities">Choose a city</label>
+      <select name="cities" id="cities">
+        <optgroup label="Denmark">
+          <option>Århus</option>
+          <option>København</option>
+        </optgroup>
+      <optgroup label="Vietnam">
+          <option>Da Nang</option>
+          <option>Ho Chi Minh City</option>
+        </optgroup></select></code></pre></div>
+    <div class="right"> <p>It should look like this</p>
+      <label for="cities">Choose a city</label>
+      <select name="cities" id="cities">
+        <optgroup label="Denmark">
+          <option>Århus</option>
+          <option>København</option>
+        </optgroup>
+      <optgroup label="Vietnam">
+          <option>Da Nang</option>
+          <option>Ho Chi Minh City</option>
+        </optgroup>
+      </select></div>
+  </div>
+  <br>
+  <br>
+  <hr>
+    <h2>Button</h2>
+    <p>All forms need to have buttons otherwise the form’s information can’t be sent.</p>
+    <pre><code class="language-html"><button type="submit">Send</button></code></pre>
+    <p>The button should be set to “submit”. But if you don’t want it to submit the form and control the button with JavaScript, leave the <code class="language-html">type</code> attribute off</p>
+  <br>
+  <br>
+  <hr>
+    <h2>Input's extra settings</h2>   
+      <h3>Required attribute</h3>
+        <p><code class="language-html">required</code> is added to force user to fill out an important field, like email, address, etc.</p>
+      <div class="wrap">
+      <div class="left"><pre><code class="language-html"><label for="email">* E-mail address: </label>
+      <input type="email" id="email" required></code></pre></div>
+      <div class="right"><label for="email">* E-mail address: </label>
+      <input type="email" id="email" required></div>
+      </div>
+      <h3>Lengths</h3>
+        <p><code class="language-html">minlength</code> & <code class="language-html">maxlength</code> are used to control the length of inputted text</p>
+      <div class="wrap">
+        <div class="left"><pre><code class="language-html"><label for="password">Password</label>
+        <input type="password" minlength="6" id="password"></code></pre>
+      </div>
+        <div class="right">
+        <label for="password">Password:</label>
+        <input type="password" minlength="6" id="password">
+        </div>
+      </div>   
+        <h3>Patterns</h3>
+        <p><code class="language-html">pattern</code> is used to restrict the format of the entered txt</p>
+      <div class="wrap">   
+        <div class="left"> <pre><code class="language-html"><label for="postalcode">Postal code</label>
+          <input type="text" pattern="[A-Za-z][0-9][A-Za-z]" id="postalcode"></code></pre></div>
+        <div class="right"><label for="postalcode">Postal code</label>
+        <input type="text" pattern="[A-Za-z][0-9][A-Za-z]" id="postalcode"></div>
+      </div>
+      <h3>Auto-capitalization</h3>
+      <p>Disable or Enable auto-capitalization in the field.</p>
+      <div class="wrap">
+        <div class="left"><pre><code class="language-html">autocapitalize = "none"</code></pre>
+      <pre><code class="language-html">autocapitalize = "off"</code></pre></div>
+        <div class="right"><p>No autocapitalization is applied (all letters default to lowercase)</p></div>
+      </div>
+        <br>
+      <div class="wrap">
+        <div class="left"> <pre><code class="language-html">autocapitalize = "on"</code></pre>
+      <pre><code class="language-html">autocapitalize = "sentences"</code></pre></div>
+        <div class="right"><p>The first letter of each sentence defaults to a capital letter; all other letters default to lowercase</p></div>
+      </div>
+      <br>
+     <div class="wrap">
+       <div class="left"> <pre><code class="language-html">autocapitalize = "words"</code></pre></div>
+       <div class="right"><p>The first letter of each word defaults to a capital letter; all other letters default to lowercase</p></div>
+     </div> 
+     <br>
+     <div class="wrap">
+       <div class="left"> <pre><code class="language-html">autocapitalize = "characters"</code></pre></div>
+       <div class="right"><p>All letters should default to uppercase</p></div>
+     </div>
+     <h3>Spellcheck</h3>
+     <div class="wrap"><div class="left"> <pre><code class="language-html">spellcheck</code></pre></div>
+     <div class="right"> <p>Trigger the browser to perform spell checking in the field.</p></div></div>
+    <h3>Autofocus</h3>
+     <div class="wrap"><div class="left"> <pre><code class="language-html">autofocus</code></pre></div>
+     <div class="right"> <p>When the page loads, this field will be focused. Be really careful, only use this when the whole purpose of the page is to fill the form.</p></div></div>
+    
+  </body>
+  <script>
+    document.querySelectorAll("pre code").forEach((el) => {
+      el.textContent = el.innerHTML;
+    });
+  </script>
+</html>
